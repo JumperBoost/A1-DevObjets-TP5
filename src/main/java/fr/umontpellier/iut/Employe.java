@@ -15,4 +15,7 @@ public class Employe {
         this.nbHeures = nbHeures;
     }
 
+    public void setBase(double base) {
+        this.base = base;
+    }
 }

@@ -60,6 +60,8 @@ Vous êtes chargés de développer un système de gestion d'employés. Chaque em
    ```java
    public Employe(String nrINSEE, String nom, int echelon, double base, double nbHeures)
    ```
+Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
+
 1. Le constructeur ayant beaucoup de paramètres, il vous est également
    demandé de proposer un _builder_ pour une construction plus souple (cf.
    [question 5, Exercice 3 du TP3](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/tp3#exercice-3-bonus)).
