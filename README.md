@@ -85,7 +85,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 
 4. Si jamais votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et de la fixer à `base * nbHeures * 1.05`, combien de changements devriez-vous effectuer au minimum pour que votre programme continue de fonctionner correctement ?
 
-   __Remarque__ : comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`, donc aucun changement dans votre code pour la question 5.
+   __Remarque__ : comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`,  donc ne changez pas votre code pour la question 4.
 
 5. Vérifiez votre solution dans le programme principal (la classe `GestionEmployes`). Vous y instancierez plusieurs
    employés (avec le _builder_) et afficherez les informations les concernant. N'oubliez pas les tests unitaires pour les exercices précédents !
@@ -144,7 +144,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 
    **Remarque :** observez la duplication de code entre les différentes classes _builders_ (non-respect du principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas)). Pour le moment, pour des raisons de facilité nous allons tolérer ce défaut et laisser les classes _builders_ telles quelles. Dans quelques semaines, après avoir suffisamment avancé dans le cours, nous y reviendront pour améliorer. Pour les curieux : https://stackoverflow.com/questions/21086417/builder-pattern-and-inheritance Une explication approfondie et une solution sont également données dans _Effective Java_ de J. Blosch, (3ème édition).
 
-4. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 123. Ajoutez cette fonctionnalité dans votre application.
+4. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 149. Ajoutez cette fonctionnalité dans votre application.
 
    **Attention** à ne pas dupliquer du code (principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
    et à ne pas modifier le code précédemment écrit ! Sinon la [dette](https://fr.wikipedia.org/wiki/Dette_technique)
