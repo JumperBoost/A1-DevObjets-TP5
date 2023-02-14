@@ -40,12 +40,12 @@
 ## TP 5 : Système de gestion des employés
 #### _Thème : Héritage - réutiliser, mais sans en abuser_
 
-Date limite de rendu de votre code sur le dépôt GitLab : **Dimanche 27 février à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **Dimanche 26 février à 23h00**
 
 Vous êtes chargés de proposer une application de gestion des employés dans une entreprise.
 L’objectif est de développer votre application de manière incrémentale, en ajoutant les fonctionnalités demandées au fur
 et à mesure __sans modifier les fonctionnalités écrites précédemment__. Ce que l'on considère ici comme _modification_
-c'est effacer et/ou réécrire du code précédemment écrit. _Ajouter_ du code sans modifier le code précédent est donc
+c'est effacer et/ou réécrire du code déjà écrit. _Ajouter_ du code sans modifier le code précédent est donc
 une opération valide. On dira ici, que pour chaque modification de votre programme (effacement et réécriture) la
 [dette](https://fr.wikipedia.org/wiki/Dette_technique) de votre logiciel augmente.
 Afin de respecter les divers principes en programmation orientée objets (encapsulation, DRY, YAGNI etc.), vous essayerez
@@ -67,9 +67,9 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
    [question 5, Exercice 3 du TP3](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/tp3#exercice-3-bonus)).
    Vous pouvez générer le _builder_ de manière automatique avec l'outil de refactoring d'IntelliJ IDEA :
     * clic droit sur le nom du constructeur de votre classe &rightarrow; _Show Context Actions_ &rightarrow;
-      _Replace Constructor with Builder_ :
+      _Replace Constructor with Builder_
       <img src="ressources/GenerationBuilder.png" width="600" alt="generation-builder"/>
-    * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres comme indiqué dans le dessin ci-dessous et cliquerez
+    * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres et cliquerez
       sur le bouton _Refactor_ :   
       <img src="ressources/ParametresBuilder.png" width="500" alt="generation-builder"/>
     * On peut continuer à refactoriser et rendre le Builder comme une classe interne statique de la classe `Employe` en faisant un glisser/déposer (drag & drop) de `EmployerBuilder` dans `Employe` dans la fenêtre de l'IDE.
