@@ -60,7 +60,7 @@ Vous êtes chargés de développer un système de gestion d'employés. Chaque em
    ```java
    public Employe(String nrINSEE, String nom, int echelon, double base, double nbHeures)
    ```
-Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
+Vous avez également un _setter_ sur les attributs `base` et `echelon` de la classe `Employe`.
 
 1. Le constructeur ayant beaucoup de paramètres, il vous est également
    demandé de proposer un _builder_ pour une construction plus souple (cf.
@@ -70,7 +70,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
       _Replace Constructor with Builder_
       <img src="ressources/GenerationBuilder.png" width="600" alt="generation-builder"/>
     * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres et cliquerez
-      sur le bouton _Refactor_ :   
+      sur le bouton _Refactor_  
       <img src="ressources/ParametresBuilder.png" width="500" alt="generation-builder"/>
     * On peut continuer à refactoriser et rendre le Builder comme une classe interne statique de la classe `Employe` en faisant un glisser/déposer (drag & drop) de `EmployerBuilder` dans `Employe` dans la fenêtre de l'IDE.
 
@@ -85,7 +85,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 
 4. Si jamais votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et de la fixer à `base * nbHeures * 1.05`, combien de changements devriez-vous effectuer au minimum pour que votre programme continue de fonctionner correctement ?
 
-   __Remarque__ : comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`,  donc ne changez pas votre code pour la question 4.
+   __Remarque__ : comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`, donc ne changez pas votre code pour la question 4.
 
 5. Vérifiez votre solution dans le programme principal (la classe `GestionEmployes`). Vous y instancierez plusieurs
    employés (avec le _builder_) et afficherez les informations les concernant. N'oubliez pas les tests unitaires pour les exercices précédents !
@@ -93,7 +93,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 
 ### Exercice 2
 
-1. Avec le développement de l'entreprise, une séparation des traitements pour les différents types d'employés devient nécessaire. Il faut spécifier les cas des _Commerciaux_, _Fabricants_, et les autres employés qu’on appellera
+1. Avec le développement de l'entreprise, une séparation des traitements pour les différents types d'employés devient nécessaire. Il faut spécifier les cas des _Commerciaux_, _Fabricants_ et les autres employés qu’on appellera
    _Techniciens_.
     * La classe `Commercial` a comme attributs `chiffreAffaires` et `tauxCommission`  (tous les deux de type `double`).
     * La classe `Fabricant` a comme attributs `nbUnitesProduites` et `tauxCommissionUnite` (type `int`et `double` respectivement).
@@ -110,8 +110,7 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 
    Ne générez pas des _builders_ pour ces classes pour le moment.
 
-2. Un commercial peut négocier des transactions avec la méthode `negocierTransaction(double sommeGagnée)`, elle incrémentera son chiffre d'affaires. Un fabricant fabrique des produits avec la méthode `void fabriquerProduits(int nbProduits)` ce qui incrémente son nombre d'unités produites. Un technicien effectue les autres tâches dans l’entreprise
-   (méthode `void effectuerTacheTechnique()`) à travers un simple affichage d'un message approprié à la console. Toutes ces méthodes sont de type `void` et vous pouvez faire en sorte d'afficher un message approprié pour illustrer leur bon fonctionnement. Par exemple, la méthode `void negocierTransaction(double sommeGagnée)` pourra en plus afficher ”_Je négocie une transaction_”.
+2. Un commercial peut négocier des transactions avec la méthode `negocierTransaction(double sommeGagnée)`, elle incrémentera son chiffre d'affaires. Un fabricant fabrique des produits avec la méthode `void fabriquerProduits(int nbProduits)` ce qui incrémente de 1 son nombre d'unités produites. Un technicien effectue les autres tâches importantes de l’entreprise à travers la méthode `void effectuerTacheTechnique()`, ce qui incrémente de 1 son échelon actuel. Toutes ces méthodes sont de type `void` et vous pouvez faire en sorte d'afficher un message approprié pour illustrer leur bon fonctionnement. Par exemple, la méthode `void negocierTransaction(double sommeGagnée)` pourra en plus afficher le texte ”_Je négocie une transaction_”.
 
 3. Vérifiez votre programme dans la classe principale, en instanciant un objet pour chaque nouveau type d'employé et en appelant sa fonction spécifique.
 
@@ -142,9 +141,9 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 2. La méthode `void representerEntreprise()` de la classe `Representant` incrémente le nombre de représentations effectuées par ce salarié (un attribut de cette classe donc).
 3. Implémentez les _builders_ pour les classes `Technicien`, `Fabricant`, `Representant` et `Vendeur`.
 
-   **Remarque :** observez la duplication de code entre les différentes classes _builders_ (non-respect du principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas)). Pour le moment, pour des raisons de facilité nous allons tolérer ce défaut et laisser les classes _builders_ telles quelles. Dans quelques semaines, après avoir suffisamment avancé dans le cours, nous y reviendront pour améliorer. Pour les curieux : https://stackoverflow.com/questions/21086417/builder-pattern-and-inheritance Une explication approfondie et une solution sont également données dans _Effective Java_ de J. Blosch, (3ème édition).
+   **Remarque :** observez la duplication de code entre les différentes classes _builders_ (non-respect du principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas)). Pour le moment, pour des raisons de facilité, nous allons tolérer ce défaut et laisser les classes _builders_ telles quelles. Dans quelques semaines, après avoir suffisamment avancé dans le cours, nous y reviendront pour améliorer. Pour les curieux : https://stackoverflow.com/questions/21086417/builder-pattern-and-inheritance Une explication approfondie et une solution sont également données dans _Effective Java_ de J. Blosch, (3ème édition).
 
-4. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 149. Ajoutez cette fonctionnalité dans votre application.
+4. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants, soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 149. Ajoutez cette fonctionnalité dans votre application.
 
    **Attention** à ne pas dupliquer du code (principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
    et à ne pas modifier le code précédemment écrit ! Sinon la [dette](https://fr.wikipedia.org/wiki/Dette_technique)
@@ -159,6 +158,6 @@ Vous avez également un _setter_ sur l'attribut `base` de la classe `Employe`.
 7. **Bonus :** Si vous êtes vraiment en avance, essayez de proposer une solution qui évite la duplication de code entre les différentes classes de builder. Vous travaillerez dans un paquetage différent pour cela. Pour avoir une vraie solution flexible, il faudrait que :
    * Un `Employe` soit instantiable en tant que `Employe`, mais aussi en tant que `Fabricant`, `Representant`, etc.
    * Un `Commercial` soit instantiable en tant que `Representant` et `Vendeur`.
-   * Un `Representant` puisse être instantialbe en tant que `Representant`, un `Technicien` en tant que `Technicien`, etc.
+   * Un `Representant` puisse être instantiable en tant que `Representant`, un `Technicien` en tant que `Technicien`, etc.
    * Les duplications de code entre les _setters_ des différents builders soient supprimées.
    * Il n'y ait aucun _cast_ dans votre code (conversion explicite d'un type à un autre, à la main).

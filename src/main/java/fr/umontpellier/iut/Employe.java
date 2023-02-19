@@ -18,4 +18,9 @@ public class Employe {
     public void setBase(double base) {
         this.base = base;
     }
+
+    public Employe setEchelon(int echelon) {
+        this.echelon = echelon;
+        return this;
+    }
 }
