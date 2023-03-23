@@ -145,9 +145,11 @@ Rappelons qu'à la [question 5, Exercice 3 du TP3](https://gitlabinfo.iutmontp.u
      _Replace Constructor with Builder_
 
      <img alt="generation-builder" src="ressources/GenerationBuilder.png" width="600"/>
+     <!--pour utilisation avec Pandoc ![generation-builder](ressources/GenerationBuilder.png){width=60%} -->
    * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres et cliquerez sur le bouton _Refactor_
 
      <img alt="generation-builder" src="ressources/ParametresBuilder.png" width="500"/>
+     <!--pour utilisation avec Pandoc ![generation-builder](ressources/ParametresBuilder.png){width=50%} -->
    
    * On peut continuer à refactoriser et rendre le Builder comme une classe interne statique de la classe `Employe` en faisant un glisser/déposer (drag & drop) de `EmployerBuilder` dans `Employe` dans la fenêtre de l'IDE.
 
