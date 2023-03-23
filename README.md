@@ -122,16 +122,15 @@ Vous avez également un _setter_ sur les attributs `base` et `echelon` de la cla
 
 2. La méthode `void representerEntreprise()` de la classe `Representant` incrémente le nombre de représentations effectuées par ce salarié (un attribut de cette classe donc).
 
-
-4. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants, soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 123. Ajoutez cette fonctionnalité dans votre application.
+3. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants, soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 123. Ajoutez cette fonctionnalité dans votre application.
 
    **Attention** à ne pas dupliquer du code (principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
    et à ne pas modifier le code précédemment écrit ! Sinon la [dette](https://fr.wikipedia.org/wiki/Dette_technique)
    de votre logiciel va augmenter. :smirk:
 
-5. Quels sont les avantages et inconvénients de votre solution à la question 4 ?
+4. Quels sont les avantages et inconvénients de votre solution à la question 4 ?
 
-6. Dessinez le diagramme de classes afin de mieux comprendre votre solution. Vous déposerez le diagramme sous forme d'image (.png ou .jpg) à la racine de votre dépôt Git.
+5. Dessinez le diagramme de classes afin de mieux comprendre votre solution. Vous déposerez le diagramme sous forme d'image (.png ou .jpg) à la racine de votre dépôt Git.
 
 ## Partie 2 - builders
 
@@ -144,10 +143,12 @@ Rappelons qu'à la [question 5, Exercice 3 du TP3](https://gitlabinfo.iutmontp.u
 1. Commençons par la classe `Employe` et proposons un _builder_ pour une construction plus souple. Vous pouvez générer le _builder_ de manière automatique avec l'outil de refactoring d'IntelliJ IDEA :
    * clic droit sur le nom du constructeur de votre classe &rightarrow; _Show Context Actions_ &rightarrow;
      _Replace Constructor with Builder_
-     <img src="ressources/GenerationBuilder.png" width="600" alt="generation-builder"/>
-   * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres et cliquerez
-     sur le bouton _Refactor_  
-     <img src="ressources/ParametresBuilder.png" width="500" alt="generation-builder"/>
+
+     <img alt="generation-builder" src="ressources/GenerationBuilder.png" width="600"/>
+   * Dans la fenêtre qui s'affiche vous cocherez tous les paramètres et cliquerez sur le bouton _Refactor_
+
+     <img alt="generation-builder" src="ressources/ParametresBuilder.png" width="500"/>
+   
    * On peut continuer à refactoriser et rendre le Builder comme une classe interne statique de la classe `Employe` en faisant un glisser/déposer (drag & drop) de `EmployerBuilder` dans `Employe` dans la fenêtre de l'IDE.
 
    C'est sûrement possible de générer le builder dans d'autres IDE, on vous laisse vous documenter.
@@ -163,11 +164,11 @@ Rappelons qu'à la [question 5, Exercice 3 du TP3](https://gitlabinfo.iutmontp.u
 1. Essayons maintenant de corriger le tir et éviter au maximum la duplication de code dans les différents builders.
    Commençons par le builder de `Fabricant`. Faites un héritage entre `EmployeBuilder` et `FabricantBuilder` et effacez les méthodes redondantes de `FabricantBuilder`, afin d'éviter la duplication de code. Est-ce que votre programme fonctionne toujours comme avant ? Argumentez.
 
-En effet, l'héritage entre les _builders_ semble naturel, mais il n'est pas si facile à mettre en place. Donc pour le moment, vous pouvez tolérer le défaut de duplication de code et laisser les classes _builders_ telles quelles sans faire d'héritage entre elle.
+    En effet, l'héritage entre les _builders_ semble naturel, mais il n'est pas si facile à mettre en place. Donc pour le moment, vous pouvez tolérer le défaut de duplication de code et laisser les classes _builders_ telles quelles sans faire d'héritage entre elle.
 
-Dans quelques semaines, après avoir suffisamment avancé dans le cours, nous y reviendront pour améliorer. Pour les curieux, il y a des explications sur le net, mais cela implique d'avoir des connaissances sur les [types génériques](https://fr.wikibooks.org/wiki/Programmation_Java/Types_g%C3%A9n%C3%A9riques) que nous n'avons pas encore vus dans le cours : https://stackoverflow.com/questions/21086417/builder-pattern-and-inheritance
+    Dans quelques semaines, après avoir suffisamment avancé dans le cours, nous y reviendront pour améliorer. Pour les curieux, il y a des explications sur le net, mais cela implique d'avoir des connaissances sur les [types génériques](https://fr.wikibooks.org/wiki/Programmation_Java/Types_g%C3%A9n%C3%A9riques) que nous n'avons pas encore vus dans le cours : https://stackoverflow.com/questions/21086417/builder-pattern-and-inheritance
 
-Une explication approfondie et une solution sont également données dans _Effective Java_ de J. Blosch, (3ème édition).
+    Une explication approfondie et une solution sont également données dans _Effective Java_ de J. Blosch, (3ème édition).
 
 2. **Gros Bonus :** Si vous êtes vraiment en avance et voulez tenter de trouver une solution qui évite la duplication de code entre les différentes classes _builders_, alors vous pouvez travailler dans un nouveau paquetage. Pour avoir une vraie solution flexible, il faudrait que :
    * Un `Employe` soit instantiable en tant que `Employe`, mais aussi en tant que `Fabricant`, `Representant`, etc.
