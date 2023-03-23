@@ -1,4 +1,4 @@
-package fr.umontpellier.iut;
+package fr.umontpellier.iut.partie1;
 
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

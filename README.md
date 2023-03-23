@@ -53,8 +53,7 @@ Afin de respecter les divers principes en programmation orientée objets (encaps
 Dans tout ce TP, tous les attributs devraient être `private` (en particulier il est **très déconseillé** d'utiliser la visibilité `protected` pour les attributs).
 
 ## Partie 1 - premiers pas dans l'héritage
-L'intégralité du code de cette partie du TP, doit résider dans le paquetage `fr.umontpellier.iut.partie1`.
-
+L'intégralité du code de cette partie du TP doit résider dans le paquetage `fr.umontpellier.iut.partie1`.
 
 Vous êtes chargés de développer un système de gestion d'employés. Chaque employé est représenté par les données suivantes : numéro de sécurité sociale, nom, échelon (entier naturel). Pour pouvoir calculer le salaire brut et le salaire net d'un employé, deux attributs supplémentaires de type `double` sont nécessaires : `base` et `nbHeures`. Le constructeur de la classe `Employe` vous est donné, merci de garder **les paramètres dans cet ordre** :
 
