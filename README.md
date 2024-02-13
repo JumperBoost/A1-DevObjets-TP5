@@ -6,14 +6,14 @@
 
 * [**Support de cours**](https://gitlabinfo.iutmontp.univ-montp2.fr/dev-objets/Ressources)
 * **Enseignants:**
-  [Marin Bougeret](mailto:marin.bougeret@umontpellier.fr),
-  [Romain Lebreton](mailto:romain.lebreton@umontpellier.fr),<!--[Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),-->
+  [Malo Gasquet](mailto:malo.gasquet@umontpellier.fr),
+  [Sophie Nabitz](mailto:sophie.nabitz@univ-avignon.fr),
   [Cyrille Nadal](mailto:cyrille.nadal@umontpellier.fr),
   [Victor Poupet](mailto:victor.poupet@umontpellier.fr),
   [Gilles Trombettoni](mailto:gilles.trombettoni@umontpellier.fr),
   [Petru Valicov](mailto:petru.valicov@umontpellier.fr)
-* Le [forum Piazza](https://piazza.com/class/ld2tzi5k82via) de ce cours pour poser vos questions
-* [Email](mailto:petru.valicov@umontpellier.fr) pour une question d'ordre privée concernant le cours.
+* Le [forum Piazza](https://piazza.com/class/lrahb0patze3u4) de ce cours pour poser vos questions
+* [Email](mailto:petru.valicov@umontpellier.fr) pour toute question concernant le cours.
 * Le [sujet du TP](https://www.lirmm.fr/~pvalicov/Cours/dev-objets/TP5.pdf) en format .pdf téléchargeable et imprimable.
 
 <!--Avant de démarrer le TP, vérifiez que vous n'avez pas atteint votre quota d'espace de stockage autorisé :
@@ -40,7 +40,7 @@
 ## TP 5 : Système de gestion des employés
 #### _Thème : Héritage - réutiliser, mais sans en abuser_
 
-Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 26 février à 23h00**
+Date limite de rendu de votre code sur le dépôt GitLab : **dimanche 3 mars à 23h00**
 
 Vous êtes chargés de proposer une application de gestion des employés dans une entreprise.
 L’objectif est de développer votre application de manière incrémentale, en ajoutant les fonctionnalités demandées au fur
@@ -65,14 +65,12 @@ Vous avez également un _setter_ sur les attributs `base` et `echelon` de la cla
 ### Exercice 1
 1. Le salaire brut de l’employé se calcule de la manière suivante : `base * nbHeures`. Le salaire net représentera toujours 80% du salaire brut. Ajoutez le code nécessaire (attributs et méthodes) pour intégrer ces fonctionnalités et proposez des méthodes respectives `getSalaireBrut()` et `getSalaireNet()`.
 
-1. Redéfinissez la méthode `String toString()` dans la classe `Employe` pour afficher les informations concernant un employé (y compris ses salaires brut et net).
+1. Redéfinissez la méthode `String toString()` dans la classe `Employe` pour afficher les informations concernant un employé (y compris ses salaires brut et net). Observez le terme _redéfinir_ : il s'agit de _modifier_ le comportement par défaut de cette méthode `toString()` prévu dans la classe `Object` -- la classe mère de toutes les classes en Java. Depuis votre IDE, vous pouvez régarder le code source de `String toString()` de la classe `Object` pour voir comment elle est implémentée (si vous ne trouvez pas, demandez à votre enseignant). 
 
-1. Si jamais votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et de la fixer à `base * nbHeures * 1.05`, combien de changements devriez-vous effectuer au minimum pour que votre programme continue de fonctionner correctement ?
+1. Si jamais votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et de la fixer à `base * nbHeures * 1.05`, combien de changements devriez-vous effectuer au minimum pour que votre programme continue de fonctionner correctement ? Attention, comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`. Donc ne changez pas votre code pour la question 1.
 
-   __Remarque__ : comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`, donc ne changez pas votre code pour la question 1.
-
-1. Vérifiez votre solution dans le programme principal (la classe `GestionEmployes`). Vous y instancierez plusieurs
-   employés et afficherez les informations les concernant. N'oubliez pas les tests unitaires pour les exercices précédents !
+1. Vérifiez votre solution dans le programme principal -- la classe `GestionEmployes`. Vous y instancierez plusieurs
+   employés et afficherez les informations les concernant. N'oubliez pas les tests unitaires pour les questions précédentes !
 
 
 ### Exercice 2
@@ -97,14 +95,14 @@ Vous avez également un _setter_ sur les attributs `base` et `echelon` de la cla
 3. Vérifiez votre programme dans la classe principale, en instanciant un objet pour chaque nouveau type d'employé et en appelant sa fonction spécifique.
 
 4. On souhaite varier le calcul des salaires bruts des différents types d’employés :
-   * Le salaire brut d’un technicien est composé de son salaire brut en tant qu’employé + une majoration en fonction de son échelon. Plus concrètement, le résultat du retour de la fonction de calcul du salaire brut devra être égal à `base ∗ nbHeures + echelon ∗ 100`.
+   * Le salaire brut d’un technicien est composé de son salaire brut en tant qu’employé + une majoration en fonction de son échelon. De point de vue mathématique, le résultat du retour de la fonction de calcul du salaire brut devra être égal à `base ∗ nbHeures + echelon ∗ 100`.
    * Le salaire brut d’un commercial dépend du chiffre d’affaires qu’il réalise. Ainsi, le salaire brut se calcule suivant la formule `base + chiffreAffaires ∗ tauxCommission`.
-   * Le salaire brut d’un fabricant est calculé de la même manière que le salaire brut d’un employé en ajoutant une rémunération supplémentaire en fonction du rendement. Dans notre exemple, le résultat de ce calcul devrait correspondre à `base ∗ nbHeures + nbUnitesProduites ∗ tauxCommissionUnite`.
+   * Le salaire brut d’un fabricant est calculé de la même manière que le salaire brut d’un employé en ajoutant une rémunération supplémentaire en fonction du rendement. Ainsi, le résultat de ce calcul devrait correspondre à `base ∗ nbHeures + nbUnitesProduites ∗ tauxCommissionUnite`.
    * **Important :** la modalité de calcul du salaire net demeure inchangée pour tous les employés (à savoir 80% du salaire brut).
 
    _Redéfinissez_ la méthode `getSalaireBrut()` dans chaque classe d'employé spécifique pour prendre en compte ces nouvelles formules. Vous ajouterez le code qui vous paraît nécessaire à la classe `Employe` mais sans modifier le code précédemment écrit.
 
-5. Déclarez un objet de type `Employe` et instanciez-le en tant que `Fabricant`. Observez le résultat de l'appel des méthodes `getSalaireBrut()` et `getSalaireNet()`. Est-ce que la méthode `fabriquerProduits(int nbProduits)` est accessible ? Expliquez en comparant avec le scénario où l'objet serait déclaré en tant que `Fabricant`.
+5. Déclarez un objet de type `Employe` et instanciez-le en tant que `Fabricant`. Observez le résultat de l'appel des méthodes `getSalaireBrut()` et `getSalaireNet()`. Est-ce que la méthode `fabriquerProduits(int nbProduits)` est accessible sur cet objet ? Expliquez en comparant avec le scénario où l'objet serait déclaré en tant que `Fabricant`.
 
 6. Si jamais le patron devient plus généreux et décide d’ajouter une somme fixe de 100€ au salaire brut de tous ses employés, combien de modifications devez-vous apporter à votre code pour que cela fonctionne ? Attention, c'était une blague, le patron ne sera pas généreux, donc ne faites pas cette modification !
 
