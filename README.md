@@ -65,7 +65,7 @@ Vous avez également un _setter_ sur les attributs `base` et `echelon` de la cla
 ### Exercice 1
 1. Le salaire brut de l’employé se calcule de la manière suivante : `base * nbHeures`. Le salaire net représentera toujours 80% du salaire brut. Ajoutez le code nécessaire (attributs et méthodes) pour intégrer ces fonctionnalités et proposez des méthodes respectives `getSalaireBrut()` et `getSalaireNet()`.
 
-1. Redéfinissez la méthode `String toString()` dans la classe `Employe` pour afficher les informations concernant un employé (y compris ses salaires brut et net). Observez le terme _redéfinir_ : il s'agit de _modifier_ le comportement par défaut de cette méthode `toString()` prévu dans la classe `Object` -- la classe mère de toutes les classes en Java. Depuis votre IDE, vous pouvez régarder le code source de `String toString()` de la classe `Object` pour voir comment elle est implémentée (si vous ne trouvez pas, demandez à votre enseignant). 
+1. Redéfinissez la méthode `String toString()` dans la classe `Employe` pour afficher les informations concernant un employé (y compris ses salaires brut et net). Observez le terme _redéfinir_ : il s'agit de _modifier_ le comportement par défaut de cette méthode `toString()` prévu dans la classe `Object` -- la classe mère de toutes les classes en Java. Depuis votre IDE, vous pouvez regarder le code source de `String toString()` de la classe `Object` pour voir comment elle est implémentée (si vous ne trouvez pas, demandez à votre enseignant). 
 
 1. Si jamais votre client vous demande de changer (modifier donc) la formule de calcul du salaire brut et de la fixer à `base * nbHeures * 1.05`, combien de changements devriez-vous effectuer au minimum pour que votre programme continue de fonctionner correctement ? Attention, comme convenu précédemment, dans ce qui suit, le salaire brut d'un employé restera toujours le même, à savoir `base * nbHeures`. Donc ne changez pas votre code pour la question 1.
 
@@ -120,13 +120,13 @@ Vous avez également un _setter_ sur les attributs `base` et `echelon` de la cla
 
 2. La méthode `void representerEntreprise()` de la classe `Representant` incrémente le nombre de représentations effectuées par ce salarié (un attribut de cette classe donc).
 
-3. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, alors que la formule de calcul du salaire brut des représentants, soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 123. Ajoutez cette fonctionnalité dans votre application.
+3. Pour terminer, faites en sorte que la méthode de calcul du salaire brut d'un vendeur soit _toujours_ la même que la méthode de calcul du salaire brut d'un commercial, mais que la formule de calcul du salaire brut des représentants, soit _toujours_ la même que celle utilisée pour le salaire brut des _techniciens_ + le nombre de représentations * 123. Ajoutez cette fonctionnalité dans votre application.
 
    **Attention** à ne pas dupliquer du code (principe [DRY](https://fr.wikipedia.org/wiki/Ne_vous_r%C3%A9p%C3%A9tez_pas))
    et à ne pas modifier le code précédemment écrit ! Sinon la [dette](https://fr.wikipedia.org/wiki/Dette_technique)
    de votre logiciel va augmenter. :smirk:
 
-4. Quels sont les avantages et inconvénients de votre solution à la question 4 ?
+4. Quels sont les avantages et inconvénients de votre solution à la question précédente ?
 
 5. Dessinez le diagramme de classes afin de mieux comprendre votre solution. Vous déposerez le diagramme sous forme d'image (.png ou .jpg) à la racine de votre dépôt Git.
 
