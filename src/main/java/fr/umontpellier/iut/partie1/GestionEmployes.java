@@ -3,15 +3,30 @@ package fr.umontpellier.iut.partie1;
 public class GestionEmployes {
 
     public static void main(String[] args) {
-        Employe paul = new Employe("1", "Paul", 1, 12.50, 193);
-        Employe thomas = new Employe("2", "Thomas", 2, 14.75, 230);
-        Employe jacques = new Employe("3", "Jacques", 2, 14.25, 185);
-        Employe martin = new Employe("4", "Martin", 3, 8.75, 215.4);
+        Commercial paul = new Commercial("1", "Paul", 1, 12.50, 193, 7435.75, 2.75);
+        Fabricant thomas = new Fabricant("2", "Thomas", 2, 14.75, 230, 274, 4.5);
+        Fabricant jacques = new Fabricant("3", "Jacques", 2, 14.25, 185, 145, 3.75);
+        Technicien martin = new Technicien("4", "Martin", 3, 8.75, 215.4);
 
-        System.out.println(paul);
-        System.out.println(thomas);
-        System.out.println(jacques);
-        System.out.println(martin);
+        System.out.println("== CA Avant Paul: " + paul.getChiffreAffaires() + " ==");
+        paul.negocierTransaction(853.25);
+        paul.negocierTransaction(1354.50);
+        System.out.println("== CA Après Paul: " + paul.getChiffreAffaires() + " ==");
+
+        System.out.println("== nbProduits Avant Thomas: " + thomas.getNbUnitesProduites() + " ==");
+        thomas.fabriquerProduits(35);
+        thomas.fabriquerProduits(174);
+        System.out.println("== nbProduits Après Thomas: " + thomas.getNbUnitesProduites() + " ==");
+
+        System.out.println("== nbProduits Avant Jacques: " + jacques.getNbUnitesProduites() + " ==");
+        jacques.fabriquerProduits(78);
+        jacques.fabriquerProduits(245);
+        System.out.println("== nbProduits Après Jacques: " + jacques.getNbUnitesProduites() + " ==");
+
+        System.out.println("== Echelon Avant Martin: " + martin.getEchelon() + " ==");
+        for(int i = 0; i < 4; i++)
+            martin.effectuerTacheTechnique();
+        System.out.println("== Echelon Après Martin: " + martin.getEchelon() + " ==");
     }
 
 }

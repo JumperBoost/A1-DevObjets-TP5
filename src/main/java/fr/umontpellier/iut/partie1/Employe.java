@@ -24,6 +24,14 @@ public class Employe {
         return this;
     }
 
+    public double getBase() {
+        return base;
+    }
+
+    public int getEchelon() {
+        return echelon;
+    }
+
     public double getSalaireBrut() {
         return base * nbHeures;
     }
