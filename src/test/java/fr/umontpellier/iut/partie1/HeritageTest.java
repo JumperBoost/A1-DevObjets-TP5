@@ -7,8 +7,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class HeritageTest {
     @Test
     public void test_heritage_commercial() {
-        Commercial commercial = new Commercial("1", "Albert", 3, 12.50, 230, 13500, 2.5);
-        Employe commercial2 = new Commercial("1", "Albert", 3, 12.50, 230, 13500, 2.5);
+        Vendeur commercial = new Vendeur("1", "Albert", 3, 12.50, 230, 13500, 2.5);
+        Employe commercial2 = new Vendeur("1", "Albert", 3, 12.50, 230, 13500, 2.5);
         commercial.negocierTransaction(1432.50);
         commercial.negocierTransaction(643.75);
         assertEquals(commercial.getChiffreAffaires(), 15576.25);

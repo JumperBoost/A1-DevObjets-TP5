@@ -24,6 +24,18 @@ public class Employe {
         return this;
     }
 
+    public String getNrINSEE() {
+        return nrINSEE;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public double getNbHeures() {
+        return nbHeures;
+    }
+
     public double getBase() {
         return base;
     }

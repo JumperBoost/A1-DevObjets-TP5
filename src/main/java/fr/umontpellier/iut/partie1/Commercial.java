@@ -1,6 +1,6 @@
 package fr.umontpellier.iut.partie1;
 
-public class Commercial extends Employe {
+public abstract class Commercial extends Employe {
     private double chiffreAffaires;
     private double tauxCommission;
 

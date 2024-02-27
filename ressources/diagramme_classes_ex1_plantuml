@@ -1,0 +1,52 @@
+@startuml
+
+class Commercial {
+  - chiffreAffaires: double
+  - tauxCommission: double
+  + getChiffreAffaires(): double
+  + negocierTransaction(double): void
+  + getSalaireBrut(): double
+}
+class Employe {
+  - nbHeures: double
+  - nom: String
+  - echelon: int
+  - base: double
+  - nrINSEE: String
+  + setBase(double): void
+  + setEchelon(int): Employe
+  + getBase(): double
+  + getNom(): String
+  + getSalaireNet(): double
+  + getEchelon(): int
+  + getSalaireBrut(): double
+  + getNrINSEE(): String
+  + getNbHeures(): double
+}
+class Fabricant {
+  - nbUnitesProduites: int
+  - tauxCommissionUnite: double
+  + getNbUnitesProduites(): int
+  + fabriquerProduits(int): void
+  + getSalaireBrut(): double
+}
+class Representant {
+  - representations: int
+  + representerEntreprise(): void
+  + getSalaireBrut(): double
+}
+class Technicien {
+  + getSalaireBrut(): double
+  + effectuerTacheTechnique(): void
+}
+class Vendeur {
+  - produitsVendu: int
+  + vendreProduit(): void
+}
+
+Commercial    --^  Employe
+Fabricant     --^  Employe
+Representant  --^  Commercial
+Technicien    --^  Employe
+Vendeur       --^  Commercial
+@enduml
