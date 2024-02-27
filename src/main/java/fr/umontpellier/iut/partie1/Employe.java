@@ -23,4 +23,25 @@ public class Employe {
         this.echelon = echelon;
         return this;
     }
+
+    public double getSalaireBrut() {
+        return base * nbHeures;
+    }
+
+    public double getSalaireNet() {
+        return getSalaireBrut() * 0.80;
+    }
+
+    @Override
+    public String toString() {
+        return "Employe{" +
+                "nrINSEE='" + nrINSEE + '\'' +
+                ", nom='" + nom + '\'' +
+                ", echelon=" + echelon +
+                ", base=" + base +
+                ", nbHeures=" + nbHeures +
+                ", salaireBrut=" + getSalaireBrut() +
+                ", salaireNet=" + getSalaireNet() +
+                '}';
+    }
 }
