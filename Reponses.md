@@ -45,3 +45,7 @@
    ```
    De plus, si on décide d'appliquer la méthode du builder, il faut bien prendre en compte que les valeurs non initialisées seront initialisées par leur valeur par défaut (si variable primitif) ou par une valeur nulle (si objet), ce qui peut poser des problèmes pour certaines fonctions de `Employe`.
 3. ✅
+
+### Exercice 2
+1. En l'état, faire un héritage entre `FabricantBuilder` et `EmployeBuilder` n'est pas possible car les fonctions heritées retournent le builder hérité.
+   C'est-à-dire par exemple, exécuter la fonction `setNom()` depuis la classe `FabricantBuilder` reverra non la classe `FabricantBuilder`, mais renverra contre notre attente `EmployeBuilder`: ce qui pose alors un problème lors de l'utilisation de fonctions de la classe `FabricantBuilder`.
